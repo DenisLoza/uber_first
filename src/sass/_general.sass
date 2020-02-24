@@ -1,0 +1,516 @@
+*
+  font-family: 'Roboto', sans-serif
+
+header
+  position: relative
+  height: 50px
+
+nav
+  height: 50px
+  background-color: #212121
+  position: fixed /** Прилепляем меню к верхней части экрана **/
+  width: 100%
+  z-index: 1 /** Позиционируем над всеми элементами на странице **/
+
+.hiden_span
+  display: none
+  font-size: 17px
+  font-weight: 300
+  line-height: 1.41
+  text-align: center
+  color: #ffffff
+
+.hamburger
+  display: none /** По-умолчанию Убираем из видимого поля кнопку вызова мобильного меню **/
+  position: absolute
+  right: 10px
+  top: 50%
+  transform: translateY(-50%)
+  width: 26px
+  height: 15px
+  span
+    display: block /** Рисуем иконку вызова меню для моб. устройств **/
+    height: 2px
+    width: 100%
+    background-color: #ffffff
+    margin-bottom: 4px
+    transition: 0.5s all
+  
+ 
+  &_active
+    span
+      margin-bottom: -2px /** Для формирования правильной иконки-крестика **/
+      &:nth-child(1)
+        transform: translateY(3px) rotate(-45deg) /** При наж. на кн. меню первая полоса поворачивается на 45гр **/
+      &:nth-child(2)
+        display: none /** Вторая полоса исчезает с экрана **/
+      &:nth-child(3)
+        transform: translateY(3px) rotate(45deg) /** При наж. на кн. меню третья полоса поворачивается на 45гр, по час. стр. **/
+
+
+
+.menu
+  display: flex
+  justify-content: space-between
+  padding: 13px 70px
+  margin: 0
+  list-style: none
+
+  &_link
+    font-size: 15px
+    font-weight: 300
+    text-align: left
+    color: #ffffff
+    &:hover
+      color: $main-color
+      text-decoration: none /** Убираем подчеркивание с сылок верхнего меню навигации **/
+
+  &_item
+    border-right: 2px dotted #000000
+    padding-right: 28px
+    &:last-child
+      border-right: none /** Убираем последний справа разделитель в меню навигации **/
+
+.subheader
+  position: absolute
+  top: 50px
+  width: 100%
+  height: 84px
+  background-color: rgba(0, 0, 0, 0.6)
+
+  &_logo
+    display: block
+    margin-top: 16px
+    max-width: 100%
+
+  &_official
+    margin-top: 6px
+    font-size: 13px
+    font-weight: 100
+    text-align: left
+    color: #ffffff80
+    opacity: 0.5
+
+  &_call
+    margin-top: 19px
+    font-size: 12px
+    font-weight: 300
+    text-align: right
+    color: #ffffff
+
+  &_phone
+    display: block
+    margin-top: 8px
+    font-size: 22px
+    text-align: right
+    color: #ffffff
+    line-height: 12px
+
+  &_btn
+    margin-top: 19px
+    width: 172px
+    height: 46px
+    box-shadow: inset 0px -3px 0 0 #0000001e
+    border: none
+    border-radius: 4px
+    background-image: linear-gradient(to top, #1eacc7, #4ce2ff)
+    text-shadow: 0.7px 0.7px 0 #00000035
+    font-weight: 400
+    font-size: 14px
+    text-align: center
+    text-transform: uppercase
+    color: #ffffff
+    +btn_hover 
+
+.promo
+  min-height: 800px
+  padding: 150px 0 135px 0
+  background-image: url('../img/header_bg.jpg')
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+
+  &_header
+    font-size: 60px
+    line-height: 60px
+    font-weight: 700
+    text-transform: uppercase
+    text-align: center
+    color: #ffffff
+    margin: 0
+
+  &_subheader
+    line-height: 36px
+    font-size: 36px
+    font-weight: 700
+    text-transform: uppercase
+    text-align: center
+    color: #ffffff
+    margin: 0
+    margin-top: 22px
+
+  &_descr
+    margin-top: 23px
+    font-size: 18px
+    font-weight: 300
+    line-height: 1.33
+    text-align: center
+    color: #ffffff
+
+  &_btn
+    display: block
+    margin: 118px auto 0 auto
+    width: 172px
+    height: 46px
+    box-shadow: inset 0px -3px 0 0 #0000001e
+    border: none
+    border-radius: 4px
+    background-image: linear-gradient(to top, #1eacc7, #4ce2ff)
+    text-shadow: 0.7px 0.7px 0 #00000035
+    font-weight: 400
+    font-size: 14px
+    text-align: center
+    text-transform: uppercase
+    color: #ffffff
+    +btn_hover 
+
+.advantadges
+  min-height: 900px
+  padding: 71px 0 65px 0
+  color: #ffffff
+
+.rect
+  display: block
+  margin: 0 auto
+  padding-top: 4px
+  width: 112px
+  height: 24px
+  background-color: #000000
+  font-size: 11px
+  font-weight: 100
+  text-align: center
+  text-transform: uppercase
+  color: #ffffff
+
+.first_header
+  font-size: 38px
+  font-weight: 700
+  text-transform: uppercase
+  text-align: center
+  color: #222222
+  margin: 0
+  margin-top: 22px
+
+.advant_item
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  margin-top: 35px
+  margin-left: 35px
+  color: #000
+
+  &_circ
+    width: 113px
+    height: 113px
+    margin-right: 26px
+    background-color: #1eacc7
+    border-radius: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &_text
+    width: 343px
+    font-size: 15px
+    font-weight: 300
+    line-height: 21px
+    text-align: justify
+    color: #202020
+
+  span
+    font-size: 17px
+    font-weight: 400
+    line-height: 21px
+    color: #1eacc7
+
+.second_header
+  margin-top: 8px
+  font-size: 17px
+  text-align: center
+  color: #222222
+
+
+/* SECTION mobile */
+
+ 
+.mobile
+  min-height: 864px
+  padding: 48px 0 79px 0
+  background-image: url('../img/rect_bg.png')
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  .row
+    margin-top: 32px /* Отодвигаем всю группу блоков от строчки сверху */
+  &_item
+    position: relative
+    width: 320px
+    height: 280px
+    margin: 0 auto /* Выравниваем блоки между друг другом по-горизонтали */
+    margin-bottom: 19px /* Отодвинем по-вертикали блоки друг от друга */
+    padding-top: 92px
+    &_plus /* Рисуем круг внутри блоков */
+      display: flex
+      justify-content: center 
+      align-items: center 
+      position: absolute
+      bottom: 35px 
+      width: 26px 
+      height: 26px
+      background-color: black
+      border-radius: 100%
+      cursor: pointer
+      margin: 0 auto
+      left: 0 
+      right: 0
+      &:before /* Рисуем псевдо-элемент горизонтальная черта */
+        content: ''
+        display: block
+        width: 14px
+        height: 2px
+        background-color: $main-color
+        transition: 0.3s all
+      &:after /* Рисуем псевдо-элемент вертикальная черта */
+        content: ''
+        display: block
+        position: absolute
+        height: 14px
+        width: 2px
+        background-color: $main-color
+        transition: 0.3s all
+      &:hover /* При наведении на "плюс" цвет будет изменяться на second-color (красный) */
+        &:before, &:after
+          background-color: $second-color
+
+    &_1
+      background-image: url('../img/mobile/1.jpg')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+    &_2
+      background-image: url('../img/mobile/2.jpg')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+    &_3
+      background-image: url('../img/mobile/3.jpg')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+    &_4
+      background-image: url('../img/mobile/4.jpg')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+    &_5
+      background-image: url('../img/mobile/5.jpg')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+    &_6
+      background-image: url('../img/mobile/6.jpg')
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+    &_subtitle
+      font-size: 24px
+      line-height: 1.29
+      text-align: center
+      text-transform: uppercase
+      color: #ffffff
+
+.oport
+  position: relative
+  height: 499px
+  padding: 57px 0 323px 0
+  background-color: #070716
+  .rect
+    background-color: #ffffff
+    color: #000000
+  .first_header
+    color: #ffffff
+  .second_header
+    color: #ffffff
+  img
+    display: block
+    position: absolute
+    margin: auto /* Располагаем машину по-центру горизонтали */
+    left: 0 /* Располагаем машину по-центру горизонтали */
+    right: 0 /* Располагаем машину по-центру горизонтали */
+    bottom: -210px /* Отступ снизу */
+
+.car
+  min-height: 397px
+  padding: 217px 0 138px 0
+  background-image: url('../img/car_bg.png')
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  .text
+    font-size: 17px
+    font-weight: 300
+    line-height: 1.41
+    text-align: center
+    color: #222222
+
+.require
+  padding: 68px 0 84px 0
+  &_block
+    margin: 33px 0 /* Задаем отступы блокам сверху и снизу */
+    &_nmb
+      margin-bottom: 0 /* Убираем нижний отступ у последних блоков, чтобы это соответствовало макету */
+  &_title
+    font-size: 22px
+    font-weight: 400
+    color: #1ca8c3
+  &_list
+    position: relative
+    font-size: 17px
+    font-weight: 300
+    line-height: 20px
+    color: #222222
+    list-style-type: none /* Убираем точки перед элементами списка */
+    padding-left: 50px /* Изменяем отступ, заданный по-умолчанию от li */
+    li
+      margin: 10px 0 /* Отступ сверху и снизу между элементами списка */
+      &:before
+        content: ''
+        position: absolute
+        display: block
+        width: 21px
+        height: 20px
+        background: url('../icons/check_blue.svg')
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        left: 20px
+  &_descr
+    color: #1ca8c3
+  .require_red
+    .require_title
+      color: $second-color
+    .require_list
+      li
+        &:before
+          background: url('../icons/check_red.svg')
+          background-position: center
+          background-repeat: no-repeat
+          background-size: cover
+
+.city
+  height: 717px
+  padding: 49px 0 49px 0
+  background-color: #000000
+  background-image: url('../img/map_bg.png')
+  background-position: center
+  background-repeat: no-repeat
+  
+  .rect
+    background-color: #ffffff
+    color: #000000
+  .first_header
+    color: #ffffff
+  .second_header
+    color: #ffffff
+  .city_ref
+    margin-top: 436px
+    font-size: 15px
+    line-height: 4.53
+    text-align: center
+    text-transform: uppercase
+    a:link
+      color: #1fbad6
+    a:visited
+      color: #1fbad6
+    a:hover
+      text-decoration: none
+      color:#ffffff
+
+.footer
+  height: 156px
+  padding: 14px 0 31px 0
+  .line
+    display: block
+    margin: 0 auto
+    width: 299px
+    height: 4px
+    background-color: #1fbad6
+  &_wrapper
+    display: flex
+    justify-content: space-between /* Общий контейнер footer_wr равноудаленно располагает вложенные элементы по-ширине */
+    align-items: flex-start
+    padding-top: 32px
+    padding-left: 47px
+    padding-right: 47px
+  &_wrapper > div
+      width: 33% /** Три блока будут иметь ширину 33%. Символом ">" мы задаем св-во для каждого вложенного div **/
+      &:nth-child(3)
+        display: flex /* Описываем третий блок с сылками на магазины */
+        justify-content: flex-end /** Элементы блока прижаты к правому краю строки **/
+  &_social
+    width: 160px /** Задаем фиксированную ширину для контейнера, чтобы элементы прижались к левому краю **/
+    display: flex
+    justify-content: space-between
+    &_item
+      display: flex /** Рисуем черные круги для иконок соц-сетей **/
+      justify-content: center
+      align-items: center
+      width: 32px
+      height: 32px
+      margin: 0 4px
+      background-color: #070716
+      border-radius: 100%
+      color: #ffffff /** Делаем цвет иконок белым **/
+    a:hover
+      text-decoration: none /** Убираем подчеркивание при наведении на иконки **/
+      color:#1fbad6
+  &_links
+    width: 390px
+    margin: 0 auto
+    &_main
+      display: flex
+      justify-content: space-between
+      padding: 0 10px
+      a
+        color: #070716
+        font-size: 15px
+        font-weight: 300
+        text-transform: uppercase
+    &_sub
+      display: flex
+      justify-content: space-between
+      padding: 10px
+      a
+        color: #999999
+        font-size: 11px
+        font-weight: 300
+        text-transform: uppercase
+    &_lang
+      display: block
+      margin: 0 auto
+      color: #1fbad6
+      font-size: 11px
+      font-weight: 400
+      text-transform: uppercase
+      text-align: center
+      margin-top: 10px
+      margin-bottom: 29px
+.foot_line 
+  height: 8px /* Бесконечная линия по-горизонтали */
+  background-color: #070716
+  width: 100%
+  left: 0
+  right: 0
+
+.display_xs_visible
+  display: none
